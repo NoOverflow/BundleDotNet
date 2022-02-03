@@ -1,0 +1,6 @@
+[book]
+authors = ["NoOverflow"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Bundle .NET"
