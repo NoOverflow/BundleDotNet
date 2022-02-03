@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "bec9fd30-a4dc-4d77-8274-8dd198e55603",
+		"name": "Bundle C#",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate QR Code from text",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7013/api/qr/text?text=Hello",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7013",
+					"path": [
+						"api",
+						"qr",
+						"text"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "Hello"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate QR Code from a phone number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7013/api/qr/phone?number=0606060606",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7013",
+					"path": [
+						"api",
+						"qr",
+						"phone"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "0606060606"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate QR Code to send an email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7013/api/qr/mail?receiver=test@test.com&subject=Hi this email is coming from the best bundle ever&content=Isn't this awesome",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7013",
+					"path": [
+						"api",
+						"qr",
+						"mail"
+					],
+					"query": [
+						{
+							"key": "receiver",
+							"value": "test@test.com"
+						},
+						{
+							"key": "subject",
+							"value": "Hi this email is coming from the best bundle ever"
+						},
+						{
+							"key": "content",
+							"value": "Isn't this awesome"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
