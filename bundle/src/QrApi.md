@@ -1,6 +1,6 @@
 # Using this library in a .NET Blazor server
 
-Now, wouldn't it be nice if we could generate these QRs by simply making a request to an API ? If you look in this repository you'll find a file TODO:NAMEIT containing a collection of postman requests. Your job is to deploy a .NET Blazor server hosting an API that can respond to these requests by generating a QR Code using your own library (QrLib).
+Now, wouldn't it be nice if we could generate these QRs by simply making a request to an API ? If you look in this repository you'll find a file in the postman folder containing a collection of postman requests. Your job is to deploy a .NET Blazor server hosting an API that can respond to these requests by generating a QR Code using your own library (QrLib).
 
 ## Create a .NET Blazor Server project
 

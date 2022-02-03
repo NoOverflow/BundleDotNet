@@ -34,9 +34,9 @@ Now, we need a QR Code generation package, feel free to use any that pleases you
 
 Search for QrCoder in NuGet and just press install, that's it, you're all good to go!
 
-From now on, you're on your own ! Using Google, the documentation for the library you chose and the links I'll provide in a separate section TODO Link it here lmao, you should be able to implement the functions from IQrGenerator.cs in QrGenerator.cs .
+From now on, you're on your own ! Using Google, the documentation for the library you chose and the resources I provided, you should be able to implement the functions from IQrGenerator.cs in QrGenerator.cs .
 
-To help you a bit, I created a test project that uses your library so you can test the functions you code (QrLibTester)
+To help you a bit, I created a test project that uses your library so you can test the functions you code (QrLibTester), just add it to your solution by right clicking your solution > Add existing project and select the .csproj file
 
 If you can't do all functions and tried your hardest, it's okay, but try to at least get FromText working.
 
