@@ -1,0 +1,485 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Bundle .NET</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Beginner.html"><strong aria-hidden="true">2.</strong> Beginner</a></li><li class="chapter-item expanded "><a href="QrLibrary.html"><strong aria-hidden="true">3.</strong> Qr Library</a></li><li class="chapter-item expanded "><a href="QrDesktop.html"><strong aria-hidden="true">4.</strong> Qr .NET MAUI</a></li><li class="chapter-item expanded "><a href="QrApi.html"><strong aria-hidden="true">5.</strong> Qr API with Blazor Server</a></li><li class="chapter-item expanded "><a href="Thanks.html"><strong aria-hidden="true">6.</strong> Thanks</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Bundle .NET</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="a-little-introduction"><a class="header" href="#a-little-introduction">A little introduction</a></h1>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Welcome to this C# bundle ! Despite the name, this is not a C# language focused workshop.
+<em>(Yes I know, but before you kill me, let me explain what I mean)</em></p>
+<p>I don't think you can get all of a language syntax and quirks in a single one-day session. Properly learning a language (especially a complex one such as C#) is a long process involving a lot of try and retry, demo projects, PoC etc..</p>
+<p>So, our goal for today is to simply get an &quot;overview&quot; of the Microsoft and .NET ecosystem. To do so, we'll start by:</p>
+<ul>
+<li>(<em>Optional</em>) Make a small C# console application to get used to the syntax</li>
+<li>Making a C# .NET Core Library for QR Code generation,
+you'll either code the logic yourself or use a NuGet package.</li>
+<li>Use this library inside a .NET MAUI application and test it on most platforms.</li>
+<li>Use the same library inside a .NET Blazor webapp, that will expose a REST API allowing users to create QR codes using a simple GET request</li>
+<li>Deploy this webapp on Azure</li>
+</ul>
+<h2 id="technologies"><a class="header" href="#technologies">Technologies</a></h2>
+<p>During the overview, I talked about many different frameworks and languages, so let me give you the boring history part</p>
+<ul>
+<li>
+<p>C# : Is an Object Oriented, strongly typed language. It's really similar to Java in some aspects (only the best features, don't worry, the rest has been thrown away as it should)</p>
+</li>
+<li>
+<p>.NET Framework (Used to be name .Net CORE) : The main Microsoft software framework.  It is open source (MIT License) and cross platform</p>
+</li>
+<li>
+<p>CLR : Serves as the execution engine of .NET Framework and offers many services such as memory management, type safety, exception handling, garbage collection, security and thread management. All programs written for .NET Framework are executed by the CLR</p>
+</li>
+</ul>
+<p><img src="./img/cli.png" alt="An image describing the CLR" /></p>
+<ul>
+<li>.NET MAUI : The evolution of Xamarin, which allows programmers to deploy (using a single codebase) to IOS, Android, macOS and Windows (Linux is not really supported for many reasons, mainly because Microsoft target for MAUI is for &quot;business apps&quot; so end user focused apps, and Linux is not widely used by regular consumers)</li>
+</ul>
+<p><img src="./img/maui.png" alt="An image describing MAUI Architecture" /></p>
+<ul>
+<li>.NET Blazor : A framework for building interactive client-side web UI with .NET, it has two &quot;versions&quot;, Blazor Server, and Blazor WASM.</li>
+</ul>
+<p><img src="./img/blazor.png" alt="An image describing Blazor" /></p>
+<p>As you can see, one of the main advantage of working with this software stack, is that you can share a lot of code and resources between them because they run on the same logic and framework (.NET). This is thanks to the fact that Microsoft has a lot of money and manpower to throw into all of these technologies at once, aswell as making them work together.</p>
+<h1 id="the-interesting-part"><a class="header" href="#the-interesting-part">The interesting part</a></h1>
+<p>Head over to the next chapter now.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="optional-getting-used-to-the-syntax"><a class="header" href="#optional-getting-used-to-the-syntax">(Optional) Getting used to the syntax</a></h1>
+<h2 id="resources"><a class="header" href="#resources">Resources:</a></h2>
+<p><em>C#:</em></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/">C# Microsoft introduction</a></li>
+</ul>
+<p><strong>You can skip this part if you're already familiar with C#, if not, follow along.</strong></p>
+<p>Even if you've never touched C#, you will find the syntax really similar to C++ so you won't be THAT lost, don't worry.</p>
+<p>There are a lot of great resources to start learning the basic syntax, I'll link them below, your first task of the day is then to complete these differents little exercises. Once you're done with them you should already have a better understanding of the tools you'll be working with later on.</p>
+<h3 id="tasks"><a class="header" href="#tasks">Tasks:</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Create a test project in visual studio <a href="https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2022">Microsoft Tutorial</a></li>
+<li><input disabled="" type="checkbox"/>
+Complete the hello world task <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/hello-world">Microsoft Tutorial</a></li>
+<li><input disabled="" type="checkbox"/>
+Complete the teleprompter console app <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/tutorials/console-teleprompter">Microsoft Tutorial</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="creating-a-net-library-qrlib"><a class="header" href="#creating-a-net-library-qrlib">Creating a .NET Library (QrLib)</a></h1>
+<p>Now, let's get down to the actual business.</p>
+<p>Start by opening the solution provided in QrCodeGenerator solution (You just have to click on the .sln file, or open it in Visual Studio 2022)</p>
+<p>Your first (or second) task of the day, is to make a Qr code generation library.
+You have been provided with an interface file describing the functions you will have to implement.</p>
+<p>If you have the time and knowledge, feel free to make it from scratch, you can start by reading the ISO Specification here (<a href="https://www.swisseduc.ch/informatik/theoretische_informatik/qr_codes/docs/qr_standard.pdf">ISO Standard for QR code</a>). You can then skip the next section</p>
+<h3 id="nuget"><a class="header" href="#nuget">NuGet</a></h3>
+<p>However if you don't (it's fine, we're here to learn) get ready to meet one of your best friends from now on, the mighty .NET package manager, NuGet!</p>
+<p>Here's how you can summon the NuGet god:</p>
+<p><em>Right click on your project (you'll find it on the right of your screen) &gt; Manage NuGet packages</em></p>
+<p>You'll see this page:</p>
+<p><img src="./img/nuget.png" alt="A NuGet view" /></p>
+<p>This package manager contains thousands of packages authored by many different people, ranging from big companies such as Amazon to independent developers, even you can publish to NuGet.</p>
+<p>NuGet takes care of versioning but also the platform of the library so that it only shows compatible libraries for your project.</p>
+<p>Once you download a package, it will be added as a reference and you can access it in your code simply like this:</p>
+<pre><code class="language-C#">using SuperPackage;
+</code></pre>
+<p>Now, we need a QR Code generation package, feel free to use any that pleases you. My recommandation (and what I used personally) is QRCoder (documentation for it is available here: <a href="https://github.com/codebude/QRCoder">QrCoder documentation</a>)</p>
+<p>Search for QrCoder in NuGet and just press install, that's it, you're all good to go!</p>
+<p>From now on, you're on your own ! Using Google, the documentation for the library you chose and the links I'll provide in a separate section TODO Link it here lmao, you should be able to implement the functions from IQrGenerator.cs in QrGenerator.cs .</p>
+<p>To help you a bit, I created a test project that uses your library so you can test the functions you code (QrLibTester)</p>
+<p>If you can't do all functions and tried your hardest, it's okay, but try to at least get FromText working.</p>
+<p>This may seem hard at first, especially if this is the first time you touch C# but trust me it's not that bad, feel free to ask for help if you're stuck.</p>
+<h3 id="tasks-1"><a class="header" href="#tasks-1">Tasks:</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+(<em>Optional</em>) Include using NuGet, a library such as QrCoder that takes care of generating an image of a QR Code</li>
+<li><input disabled="" type="checkbox"/>
+Create a class that implements the IQrGenerator interface</li>
+<li><input disabled="" type="checkbox"/>
+Implement FromText()</li>
+<li><input disabled="" type="checkbox"/>
+Implement FromPhone()</li>
+<li><input disabled="" type="checkbox"/>
+Implement FromMail()</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-that-library-in-a-net-maui-app"><a class="header" href="#using-that-library-in-a-net-maui-app">Using that library in a .NET MAUI App</a></h1>
+<h2 id="resources-1"><a class="header" href="#resources-1">Resources:</a></h2>
+<p><em>MAUI (Xamarin) + UI:</em></p>
+<ul>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/maui/what-is-maui">What is MAUI?</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/maui/xaml/">Introduction to XAML</a></li>
+<li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/text/entry">Entry Control</a></li>
+<li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/button">Button Control</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/maui/user-interface/controls/graphicsview">GraphicsView Control</a></li>
+</ul>
+<p><em>Image treatment:</em></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/maui/user-interface/graphics/images">Image treatment with MAUI graphics</a></li>
+</ul>
+<h2 id="creating-a-net-maui-project"><a class="header" href="#creating-a-net-maui-project">Creating a .NET MAUI Project</a></h2>
+<p>Congratulations on coding that library ! Now a library in itself is good but using it in an application may be a bit better, right ?</p>
+<p><em>Introducing <strong>QrGenerator2022</strong>, the best QR Code generator on desktop for the year 2022 (yes this is the best name I could come up with)</em></p>
+<p>For this purpose, we'll use .NET MAUI, as I said earlier, this is a multiplatform framework allowing us to use .NET to create user applications on many platforms such as Windows, Mac, Android and IOS.</p>
+<p>To create a project along with your library, right click on your Solution in the Solution Explorer (Panel on the right) then click on &quot;Add &gt; New Project&quot;, select a .NET MAUI App (Preview) and name it QrGenerator2022.</p>
+<p>You should see the project appears in the same panel.</p>
+<h2 id="adding-a-dependency-to-a-local-net-library"><a class="header" href="#adding-a-dependency-to-a-local-net-library">Adding a dependency to a local .NET Library</a></h2>
+<p>Now we want to use QrLib in that new program in order to generate Qr codes,
+since QrLib is in the same &quot;Solution&quot; (Bundle of projects), we don't need NuGet.
+Instead, deploy <strong>QrGenerator2022</strong> in the solution explorer panel and right click the <strong>Dependencies</strong> tab, from there click <strong>Add project reference</strong> and select <strong>QrLib</strong>, finish by pressing Ok.</p>
+<p>You are now able to use any public function exported by QrLib inside your project, you don't have to worry about any platform, everything is taken care of by the .NET Framework.</p>
+<h2 id="creating-your-first-view"><a class="header" href="#creating-your-first-view">Creating your first view</a></h2>
+<p>Now, let's see how we can design a &quot;View&quot; (Interface) to generate a test QR Code.
+Creating views in .NET MAUI is done through a markup language called XAML (Although you can create your UIs by going only-code), I've linked some useful tutorials in the &quot;Resources&quot; section above.</p>
+<p>Start by running the sample program, to do so right click on it and <em>Set as startup project</em> then press F5 or the play button. Now open the MainPage.xaml file to try and figure out how it the UI is rendered from XAML. Using this and the documentation online, you should be able to complete the following tasks.</p>
+<h3 id="tasks-2"><a class="header" href="#tasks-2">Tasks:</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Remove the sample UI (You can keep the grid layout or use your own)</li>
+<li><input disabled="" type="checkbox"/>
+Add an <em>Entry</em> element (It's a fancy textbox), so that the user can input the QR text.</li>
+<li><input disabled="" type="checkbox"/>
+Add a button that triggers the QR Code generation, for now, just create the button <em>Clicked</em> handler and leave it as-is in the code.</li>
+<li><input disabled="" type="checkbox"/>
+Add a <em>GraphicsView</em> element that will be later used to draw the generated QR code, make sure to give it a size !</li>
+<li><input disabled="" type="checkbox"/>
+Try and make the UI good looking, it's always nice</li>
+</ul>
+<h2 id="adding-logic-to-your-view"><a class="header" href="#adding-logic-to-your-view">Adding logic to your view</a></h2>
+<p><strong>Disclaimer:</strong>
+<em>Usually, you design your program by following a pattern (MVVM for example) but for the sake of simplicity we'll do it the dirty way here.</em></p>
+<p>Now that we have our fancy UI, let's make it do something useful. If you followed properly, your button should now have a <em>Clicked</em> handler in the code (If you can't find code, deploy the MainPage.xaml on the right and click the .cs file, that's the code-behind).</p>
+<p>It's up to you to code this button logic, here's what it should do (feel free to export this in another function and call it from the handler):</p>
+<h3 id="tasks-3"><a class="header" href="#tasks-3">Tasks:</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Check if the entered text is null</li>
+<li><input disabled="" type="checkbox"/>
+Create a QrGenerator from QrLib, (you may have to add a using statement)</li>
+<li><input disabled="" type="checkbox"/>
+Generate a QR from the entry text by calling QrGenerator.FromText()</li>
+<li><input disabled="" type="checkbox"/>
+(<em>Wait for next step</em>) Pass the byte[] to your Drawable class</li>
+<li><input disabled="" type="checkbox"/>
+(<em>Wait for next step</em>) Invalidate the GraphicsView so that it is redrawn</li>
+</ul>
+<p>You now have a byte[] representing the image data, you need to convert it to an actual Image object, then draw it on a canvas. To perform these actions you'll need to be inside a graphical-context.</p>
+<h2 id="creating-your-graphical-context"><a class="header" href="#creating-your-graphical-context">Creating your graphical context</a></h2>
+<p>Create a class called <strong>QrDrawable</strong> in the MainPage.xaml.cs file, this class is your graphical context and will be used to render the QR code, this class MUST implement <strong>IDrawable</strong> (Visual studio can do it for you if you haven't figured it out yet, just right click on the error line and then click on the lightbulb).</p>
+<p>Add a public property to this class with a byte[] type and set its default value to null (Check how-to in the resources). This property will be used to pass the byte array between the graphical context and the view-code.</p>
+<p>Go back to the previous tasks, you should now be able to pass the byte[] and call the Invalidate function on your GraphicsView.</p>
+<p>You can go then ahead and code the <strong>Draw()</strong> (implementing <strong>IDrawable</strong>) function logic so that it performs the following tasks:</p>
+<h3 id="tasks-4"><a class="header" href="#tasks-4">Tasks:</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Check if the byte[] property is not null</li>
+<li><input disabled="" type="checkbox"/>
+Create a MemoryStream from it and call GraphicsPlatform.CurrentService.LoadImageFromStream to get an image from it</li>
+<li><input disabled="" type="checkbox"/>
+Draw the resulting image on the canvas (Check the resources)</li>
+</ul>
+<h2 id="you-should-be-done-congrats"><a class="header" href="#you-should-be-done-congrats">You should be done, congrats</a></h2>
+<p>If you did everything properly, you can now start your MAUI program, enter text in your entry and click the generate button, you should get a nice looking QR Code. Go ahead and scan it ! You can be proud (and you can go back later on if you want to add features such as generating from a phone number and such.)</p>
+<p>If not, go back and figure out what's wrong, you can use breakpoints by pressing F9 and hover any variable to check its value during runtime. Make sure that the button press calls the handler.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-this-library-in-a-net-blazor-server"><a class="header" href="#using-this-library-in-a-net-blazor-server">Using this library in a .NET Blazor server</a></h1>
+<p>Now, wouldn't it be nice if we could generate these QRs by simply making a request to an API ? If you look in this repository you'll find a file TODO:NAMEIT containing a collection of postman requests. Your job is to deploy a .NET Blazor server hosting an API that can respond to these requests by generating a QR Code using your own library (QrLib).</p>
+<h2 id="create-a-net-blazor-server-project"><a class="header" href="#create-a-net-blazor-server-project">Create a .NET Blazor Server project</a></h2>
+<p>Let's start by adding a .NET Blazor server project to our solution and referencing QrLib.
+It is the same process as the .NET MAUI App we created before, just right click on the solution in the solution explorer and add a Blazor Server project
+Name it: <strong>QrGeneratorAPI</strong>
+.NET Blazor can be used to render user interface as well as routing (and many other things) but we'll focus on routing and handling API requests.</p>
+<h2 id="adding-a-dependency-to-a-local-net-library-1"><a class="header" href="#adding-a-dependency-to-a-local-net-library-1">Adding a dependency to a local .NET Library</a></h2>
+<p>Now we want to use QrLib in that project,
+since QrLib is in the same &quot;Solution&quot; (Bundle of projects), we don't need NuGet.
+Instead, deploy <strong>QrGeneratorAPI</strong> in the solution explorer panel and right click the <strong>Dependencies</strong> tab, from there click <strong>Add project reference</strong> and select <strong>QrLib</strong>, finish by pressing Ok.</p>
+<p>You are now able to use any public function exported by QrLib inside your project, you don't have to worry about any platform, everything is taken care of by the .NET Framework.</p>
+<h2 id="adding-qrgenerator-as-a-singleton-service"><a class="header" href="#adding-qrgenerator-as-a-singleton-service">Adding QrGenerator as a singleton service</a></h2>
+<p>Blazor Server provides a dependency injection logic, meaning you can register services / resources instances and access them from different parts of the code, whether it is in a controller or in a page.</p>
+<p>Let's register our generator as a service, to do so, head over to <strong>Program.cs</strong>
+You'll notice a variable called builder, add a new line before</p>
+<pre><code class="language-C#">builder.Services.AddRazorPages();
+</code></pre>
+<p>and type in this code</p>
+<pre><code class="language-C#">builder.Services.AddSingleton&lt;IQrGenerator&gt;(new QrGenerator());
+</code></pre>
+<p>you might have to add a using statement as such:</p>
+<pre><code class="language-C#">using QrLib;
+</code></pre>
+<p>If you get an error saying QrLib does not exist, you didn't add a dependency to QrLib, refer to the previous section.
+This lines tells Blazor to create an instance of QrGenerator that implements the interface IQrGenerator as a singleton and make it available for anyone asking.
+<em>Singleton</em> is the service lifetime, here are all of the available lifetimes:</p>
+<ul>
+<li>Transient operations are always different, a new instance is created with every retrieval of the service.</li>
+<li>Scoped operations change only with a new scope, but are the same instance within a scope.</li>
+<li>Singleton operations are always the same, a new instance is only created once.</li>
+</ul>
+<h2 id="adding-a-controller"><a class="header" href="#adding-a-controller">Adding a controller</a></h2>
+<p>Create a <strong>Controllers</strong> folder in the solution, right click on it, and add a <strong>Controller</strong> file, choose <strong>API &gt; Empty API Controller</strong> and name it <em>QrController.cs</em>
+The created file should have this structure:</p>
+<pre><code class="language-C#">using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace QrGeneratorAPI.Controllers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class QrController : ControllerBase
+    {
+    }
+}
+</code></pre>
+<p>Remove the Route attribute as we won't need a global one</p>
+<h2 id="injecting-a-service-into-a-controller"><a class="header" href="#injecting-a-service-into-a-controller">Injecting a service into a controller</a></h2>
+<p>Let's get our QrGenerator injected into our controller, to do so, start by adding a <strong>IQrGenerator</strong> variable to your class as private and add a constructor to your class like so:</p>
+<pre><code class="language-C#">using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace QrGeneratorAPI.Controllers
+{
+    private IQrGenerator QrGenerator { get; set; }
+
+    public QrController(IQrGenerator qrGenerator)
+    {
+        if (qrGenerator == null)
+            throw new ArgumentNullException(nameof(qrGenerator));
+        this.QrGenerator = qrGenerator;
+    }
+}
+</code></pre>
+<p>Blazor DI will take care of injecting the service as a parameter to your constructor when constructing the instance, you don't have anything particular to do.</p>
+<h2 id="adding-routes-handler-to-your-controller"><a class="header" href="#adding-routes-handler-to-your-controller">Adding routes handler to your controller</a></h2>
+<p>Now, let's get some routes in our controller shall we;
+we're going to need three routes:</p>
+<ul>
+<li>A route to generate a Qr Code from text</li>
+<li>A route to generate a Qr Code from a phone number</li>
+<li>A route to generate a Qr Code from an email structure</li>
+</ul>
+<p>If you did not implement all of these functions in your library, you can go back and do it, if you don't want to, just don't implement the routes for them.
+Adding a route handler is really easy, all you have to do is create a function, add the parameters you want aswell as how to get them (Exemple: From the body, from json, from the query URL...), add the HTTP method to handle, and a return type!
+I'll make the first one for you, so you can reuse the code for your own routes</p>
+<pre><code class="language-C#">[HttpGet] // We handle HTTP Get requests ...
+[Route(&quot;api/qr/text&quot;)] // ... on https://domain.com/api/qr/text
+public IActionResult GetText([FromQuery(Name = &quot;text&quot;)] string text) // We need a parameter named text that will be taken from the query URL ?name=
+{
+    return Ok(&quot;Everything went fine&quot;); // We return a 200 with a message
+}
+</code></pre>
+<p>Now that you have your routes setup, let's make them do useful things, but I'm not going to help you for this one, I'll just guide you a bit.</p>
+<p>Your code will need to do these things:</p>
+<ul>
+<li>Call QrGenerator.From<em>Method</em> and get the byte data</li>
+<li>return a file using File() with <em>image/png</em> as the MIME type.</li>
+</ul>
+<h3 id="tasks-5"><a class="header" href="#tasks-5">Tasks:</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Add a route handler for Qr Text generation</li>
+<li><input disabled="" type="checkbox"/>
+Add a route handler for Qr Phone generation</li>
+<li><input disabled="" type="checkbox"/>
+Add a route handler for Qr Mail generation</li>
+</ul>
+<h2 id="expose-these-routes"><a class="header" href="#expose-these-routes">Expose these routes</a></h2>
+<p>You're almost done, we have to tell Blazor to expose our controller along with the routes, head back over to <strong>Program.cs</strong>,
+from there, add this code:</p>
+<pre><code class="language-C#">app.MapFallbackToPage(&quot;/_Host&quot;);
+
+// Add this here
+app.UseEndpoints((endpoints) =&gt;
+{
+    endpoints.MapControllers();
+});
+//
+
+app.Run();
+</code></pre>
+<p>This simply tells Blazor how to behave with our controller and how to expose it.</p>
+<h2 id="test-with-postman"><a class="header" href="#test-with-postman">Test with Postman</a></h2>
+<p>You're all set! Go ahead and open the collection in Postman and try some requests, you will probably have to change the URLs to match your controller routes.</p>
+<p>If you succedeed, you should see your QR codes directly in postman like so:
+<img src="./img/postman.png" alt="A successful postman request" /></p>
+<h2 id="deploying-on-azure"><a class="header" href="#deploying-on-azure">Deploying on Azure</a></h2>
+<p>Congratulations ! Let's now see how easy it is to deploy it on azure
+This won't cost you any money as you technically have a student azure account, check out the advantages of being a student (https://azure.microsoft.com/en-us/free/students/).</p>
+<p>If you went this far, you can go ahead and deploy this on azure, all you have to do is right click on your .NET Blazor server project in the solution explorer &gt; Click <strong>Publish</strong>, you'll have multiple options here, deploying on a docker container, to an FTP server etc., chose Azure and follow the instructions !</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="thanks"><a class="header" href="#thanks">Thanks</a></h1>
+<p>Thanks for following along this bundle, even if you didn't complete it, I hope it got you (even a little bit) interested in the .NET ecosystem and how easy things work together in it,
+there is much more to learn, from Mono to Unity, so try and make your next project in C# if you can :)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
