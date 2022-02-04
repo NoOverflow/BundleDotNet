@@ -43,6 +43,7 @@ If you can't do all functions and tried your hardest, it's okay, but try to at l
 
 This may seem hard at first, especially if this is the first time you touch C# but trust me it's not that bad, feel free to ask for help if you're stuck.
 
+WARNING: You can not use QrCode from the QrCoder library as we're in .NET 6.0, you have to use **PngByteQRCode**
 ### Tasks:
 - [ ] (*Optional*) Include using NuGet, a library such as QrCoder that takes care of generating an image of a QR Code
 - [ ] Create a class that implements the IQrGenerator interface
