@@ -204,6 +204,7 @@ Generate a QR from the entry text by calling QrGenerator.FromText()</li>
 </ul>
 <p>You now have a byte[] representing the image data, you need to convert it to an actual Image object, then draw it on a canvas. To perform these actions you'll need to be inside a graphical-context.</p>
 <h2 id="creating-your-graphical-context"><a class="header" href="#creating-your-graphical-context">Creating your graphical context</a></h2>
+<p>For the next steps you will need to add a NuGet reference to <a href="https://www.nuget.org/packages/Microsoft.Maui.Graphics/">Microsoft.Maui.Graphics</a></p>
 <p>Create a class called <strong>QrDrawable</strong> in the MainPage.xaml.cs file, this class is your graphical context and will be used to render the QR code, this class MUST implement <strong>IDrawable</strong> (Visual studio can do it for you if you haven't figured it out yet, just right click on the error line and then click on the lightbulb).</p>
 <p>Add a public property to this class with a byte[] type and set its default value to null (Check how-to in the resources). This property will be used to pass the byte array between the graphical context and the view-code.</p>
 <p>Go back to the previous tasks, you should now be able to pass the byte[] and call the Invalidate function on your GraphicsView.</p>
