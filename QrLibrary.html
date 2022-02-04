@@ -163,7 +163,7 @@ If you have the time and knowledge, feel free to make it from scratch, you can s
 <p>Now, we need a QR Code generation package, feel free to use any that pleases you. My recommandation (and what I used personally) is QRCoder (documentation for it is available here: <a href="https://github.com/codebude/QRCoder">QrCoder documentation</a>)</p>
 <p>Search for QrCoder in NuGet and just press install, that's it, you're all good to go!</p>
 <p>From now on, you're on your own ! Using Google, the documentation for the library you chose and the resources I provided, you should be able to implement the functions from IQrGenerator.cs in QrGenerator.cs .</p>
-<p>To help you a bit, I created a test project that uses your library so you can test the functions you code (QrLibTester), just add it to your solution by right clicking your solution &gt; Add existing project and select the .csproj file</p>
+<p>To help you a bit, I created a test project that uses your library so you can test the functions you code (QrLibTester), just add it to your solution by right clicking your solution &gt; Add existing project and select the .csproj file, you will have to add a dependency to your library though, if you don't know how to do that, check out <a href="https://docs.microsoft.com/en-us/visualstudio/ide/how-to-create-and-remove-project-dependencies?view=vs-2022">This link</a></p>
 <p>If you can't do all functions and tried your hardest, it's okay, but try to at least get FromText working.</p>
 <p>This may seem hard at first, especially if this is the first time you touch C# but trust me it's not that bad, feel free to ask for help if you're stuck.</p>
 <h3 id="tasks"><a class="header" href="#tasks">Tasks:</a></h3>
@@ -178,6 +178,8 @@ Implement FromText()</li>
 Implement FromPhone()</li>
 <li><input disabled="" type="checkbox"/>
 Implement FromMail()</li>
+<li><input disabled="" type="checkbox"/>
+Test using QrLibTester</li>
 </ul>
 
                     </main>
