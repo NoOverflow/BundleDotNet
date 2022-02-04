@@ -144,10 +144,11 @@
                     <main>
                         <h1 id="creating-a-net-library-qrlib"><a class="header" href="#creating-a-net-library-qrlib">Creating a .NET Library (QrLib)</a></h1>
 <p>Now, let's get down to the actual business.</p>
-<p>Start by opening the solution provided in QrCodeGenerator solution (You just have to click on the .sln file, or open it in Visual Studio 2022)</p>
+<p>Start by creating a solution in Visual Studio 2022 and choose the C# Class library template.</p>
 <p>Your first (or second) task of the day, is to make a Qr code generation library.
-You have been provided with an interface file describing the functions you will have to implement.</p>
-<p>If you have the time and knowledge, feel free to make it from scratch, you can start by reading the ISO Specification here (<a href="https://www.swisseduc.ch/informatik/theoretische_informatik/qr_codes/docs/qr_standard.pdf">ISO Standard for QR code</a>). You can then skip the next section</p>
+You have been provided with an interface file (IQrGenerator.cs) describing the functions you will have to implement.</p>
+<p>We'll now need a library that takes care of the actual work of generating a QR Code as we'll just be making a simple wrapper.
+If you have the time and knowledge, feel free to make it from scratch, you can start by reading the ISO Specification here (<a href="https://www.swisseduc.ch/informatik/theoretische_informatik/qr_codes/docs/qr_standard.pdf">ISO Standard for QR code</a>). You can then skip the next section</p>
 <h3 id="nuget"><a class="header" href="#nuget">NuGet</a></h3>
 <p>However if you don't (it's fine, we're here to learn) get ready to meet one of your best friends from now on, the mighty .NET package manager, NuGet!</p>
 <p>Here's how you can summon the NuGet god:</p>
