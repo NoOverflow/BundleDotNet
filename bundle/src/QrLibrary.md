@@ -2,11 +2,12 @@
 
 Now, let's get down to the actual business.
 
-Start by opening the solution provided in QrCodeGenerator solution (You just have to click on the .sln file, or open it in Visual Studio 2022)
+Start by creating a solution in Visual Studio 2022 and choose the C# Class library template.
 
 Your first (or second) task of the day, is to make a Qr code generation library.
-You have been provided with an interface file describing the functions you will have to implement.
+You have been provided with an interface file (IQrGenerator.cs) describing the functions you will have to implement.
 
+We'll now need a library that takes care of the actual work of generating a QR Code as we'll just be making a simple wrapper.
 If you have the time and knowledge, feel free to make it from scratch, you can start by reading the ISO Specification here ([ISO Standard for QR code](https://www.swisseduc.ch/informatik/theoretische_informatik/qr_codes/docs/qr_standard.pdf)). You can then skip the next section
 
 ### NuGet
