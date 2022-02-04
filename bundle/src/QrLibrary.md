@@ -37,7 +37,7 @@ Search for QrCoder in NuGet and just press install, that's it, you're all good t
 
 From now on, you're on your own ! Using Google, the documentation for the library you chose and the resources I provided, you should be able to implement the functions from IQrGenerator.cs in QrGenerator.cs .
 
-To help you a bit, I created a test project that uses your library so you can test the functions you code (QrLibTester), just add it to your solution by right clicking your solution > Add existing project and select the .csproj file
+To help you a bit, I created a test project that uses your library so you can test the functions you code (QrLibTester), just add it to your solution by right clicking your solution > Add existing project and select the .csproj file, you will have to add a dependency to your library though, if you don't know how to do that, check out [This link](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-create-and-remove-project-dependencies?view=vs-2022)
 
 If you can't do all functions and tried your hardest, it's okay, but try to at least get FromText working.
 
@@ -49,3 +49,4 @@ This may seem hard at first, especially if this is the first time you touch C# b
 - [ ] Implement FromText()
 - [ ] Implement FromPhone()
 - [ ] Implement FromMail()
+- [ ] Test using QrLibTester
