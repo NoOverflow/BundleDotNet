@@ -65,6 +65,8 @@ You now have a byte[] representing the image data, you need to convert it to an 
 
 ## Creating your graphical context
 
+For the next steps you will need to add a NuGet reference to [Microsoft.Maui.Graphics](https://www.nuget.org/packages/Microsoft.Maui.Graphics/)
+
 Create a class called **QrDrawable** in the MainPage.xaml.cs file, this class is your graphical context and will be used to render the QR code, this class MUST implement **IDrawable** (Visual studio can do it for you if you haven't figured it out yet, just right click on the error line and then click on the lightbulb).
 
 Add a public property to this class with a byte[] type and set its default value to null (Check how-to in the resources). This property will be used to pass the byte array between the graphical context and the view-code.
